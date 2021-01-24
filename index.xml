@@ -1,12 +1,14 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
-   <title>Kiera</title>
+   <title>WZYtrick&#39;s Blog</title>
    <link>https://wzytrick.github.io/</link>
-   <description>Recent content on Kiera</description>
+   <description>Recent content on WZYtrick&#39;s Blog</description>
    <generator>Hugo -- gohugo.io</generator>
-   <copyright>Copyright &amp;copy; 2019 - Author Name</copyright>
-   <lastBuildDate>Sat, 23 Jan 2021 23:27:23 +0800</lastBuildDate>
+   <managingEditor>1679636965@qq.com (WZYtrick)</managingEditor>
+   <webMaster>1679636965@qq.com (WZYtrick)</webMaster>
+   <copyright>Copyright &amp;copy; 2019 - WZYtrick</copyright>
+   <lastBuildDate>Sun, 24 Jan 2021 17:34:46 +0800</lastBuildDate>
    
        <atom:link href="https://wzytrick.github.io/index.xml" rel="self" type="application/rss+xml" />
    
@@ -15,9 +17,9 @@
        <title>Test1</title>
        <link>https://wzytrick.github.io/posts/test1/</link>
        <pubDate>Sat, 23 Jan 2021 23:27:23 +0800</pubDate>
-       
+       <author>1679636965@qq.com (WZYtrick)</author>
        <guid>https://wzytrick.github.io/posts/test1/</guid>
-       <description>&lt;p&gt;hello hugo! hello github! hello git!&lt;/p&gt;</description>
+       <description>&lt;p&gt;hello hugo! hello github! hello git!&lt;/p&gt;&lt;p&gt;hellooooooo&lt;/p&gt;&lt;p&gt;hellllllllo&lt;/p&gt;</description>
      </item>
    
  </channel>

@@ -1,11 +1,13 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
-   <title>Tags on Kiera</title>
+   <title>Tags on WZYtrick&#39;s Blog</title>
    <link>https://wzytrick.github.io/tags/</link>
-   <description>Recent content in Tags on Kiera</description>
+   <description>Recent content in Tags on WZYtrick&#39;s Blog</description>
    <generator>Hugo -- gohugo.io</generator>
-   <copyright>Copyright &amp;copy; 2019 - Author Name</copyright>
+   <managingEditor>1679636965@qq.com (WZYtrick)</managingEditor>
+   <webMaster>1679636965@qq.com (WZYtrick)</webMaster>
+   <copyright>Copyright &amp;copy; 2019 - WZYtrick</copyright>
    
        <atom:link href="https://wzytrick.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
    
@@ -14,9 +16,9 @@
        <title>Test1</title>
        <link>https://wzytrick.github.io/posts/test1/</link>
        <pubDate>Sat, 23 Jan 2021 23:27:23 +0800</pubDate>
-       
+       <author>1679636965@qq.com (WZYtrick)</author>
        <guid>https://wzytrick.github.io/posts/test1/</guid>
-       <description>&lt;p&gt;hello hugo! hello github! hello git!&lt;/p&gt;</description>
+       <description>&lt;p&gt;hello hugo! hello github! hello git!&lt;/p&gt;&lt;p&gt;hellooooooo&lt;/p&gt;&lt;p&gt;hellllllllo&lt;/p&gt;</description>
      </item>
    
  </channel>
