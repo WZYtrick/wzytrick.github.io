@@ -3,13 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wzytrick.github.io/os/</loc>
+    <lastmod>2021-01-24T20:49:07+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wzytrick.github.io/posts/</loc>
     <lastmod>2021-01-24T17:34:46+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://wzytrick.github.io/</loc>
-    <lastmod>2021-01-24T17:34:46+08:00</lastmod>
+    <lastmod>2021-01-24T20:49:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzytrick.github.io/os/firstblog/</loc>
+    <lastmod>2021-01-24T20:48:45+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzytrick.github.io/posts/myfirstblog/</loc>
+    <lastmod>2021-01-24T20:24:00+08:00</lastmod>
   </url>
   
   <url>
