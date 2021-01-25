@@ -1,16 +1,16 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
-   <title>WZYtrick&#39;s Blog</title>
-   <link>https://wzytrick.github.io/</link>
-   <description>Recent content on WZYtrick&#39;s Blog</description>
+   <title>Data Structure on WZYtrick&#39;s Blog</title>
+   <link>https://wzytrick.github.io/datastructure/</link>
+   <description>Recent content in Data Structure on WZYtrick&#39;s Blog</description>
    <generator>Hugo -- gohugo.io</generator>
    <managingEditor>1679636965@qq.com (WZYtrick)</managingEditor>
    <webMaster>1679636965@qq.com (WZYtrick)</webMaster>
    <copyright>Copyright &amp;copy; 2019 - WZYtrick</copyright>
    <lastBuildDate>Mon, 25 Jan 2021 23:17:19 +0800</lastBuildDate>
    
-       <atom:link href="https://wzytrick.github.io/index.xml" rel="self" type="application/rss+xml" />
+       <atom:link href="https://wzytrick.github.io/datastructure/index.xml" rel="self" type="application/rss+xml" />
    
    
      <item>
