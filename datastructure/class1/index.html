@@ -124,6 +124,24 @@
 <h2 id="2linked-list">2.Linked List</h2>
 <p>​	linked list is a linear collection of data elements whose order is <strong>not</strong> given by their physical placement in memory. Instead, each element points to the next. It is a data structure consisting of a collection of nodes which together represent a sequence. In its most basic form, each node contains: data, and a reference (in other words, a link) to the next node in the sequence.</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/1920px-Singly-linked-list.svg.png" alt=""></p>
+<h1 id="对于单链表的一些操作">对于单链表的一些操作</h1>
+<h2 id="为了便于理解不使用嘤语">为了便于理解不使用嘤语</h2>
+<ol>
+<li>逆序构造单链表</li>
+<li>单链表reverse(转置/颠倒)</li>
+<li>单链表升序排序</li>
+<li>两个有序链表合并</li>
+<li>返回链表倒数第k个元素</li>
+<li>判断链表是否有环，有则返回相遇的节点</li>
+<li>在一个有环的链表中找到环的入口</li>
+<li>删除当前节点</li>
+<li>找出单链表的中间节点</li>
+</ol>
+<h2 id="一逆序构造单链表">一、逆序构造单链表</h2>
+<p>​	设一个指针pre初始指向NULL，每次建立一个节点把这个节点的next指针指向pre，然后把pre指向这个创建的节点。完成后把头节点next指针指向pre。</p>
+<h2 id="二单链表reverse转置颠倒">二、单链表reverse(转置/颠倒)</h2>
+<p>​	头结点的next和next的next为空直接return，不为空顺序遍历该链表通过逆序构造单链表的方式完成转置。</p>
+<h2 id="三单链表升序排序">三、单链表升序排序</h2>
 
 
 </article>
