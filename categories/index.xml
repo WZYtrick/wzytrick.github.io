@@ -13,21 +13,21 @@
    
    
      <item>
-       <title>MyFirstBlog</title>
-       <link>https://wzytrick.github.io/posts/myfirstblog/</link>
-       <pubDate>Sun, 24 Jan 2021 20:24:00 +0800</pubDate>
+       <title>FirstClass</title>
+       <link>https://wzytrick.github.io/os/firstclass/</link>
+       <pubDate>Thu, 04 Feb 2021 23:57:45 +0800</pubDate>
        <author>1679636965@qq.com (WZYtrick)</author>
-       <guid>https://wzytrick.github.io/posts/myfirstblog/</guid>
-       <description>&lt;h1 id=&#34;这是wzytrick的第一个blog&#34;&gt;这是WZYtrick的第一个Blog&lt;/h1&gt;&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;&lt;p&gt;​今年大二，软件工程专业，经过一些学习后决定将所学的知识通过blog的方式记录下来。本来想在CSDN上发文章，但是看到b站一位up大佬自己做的网页blog觉得很帅，通过一系列查资料，WZYtrickBlog应运而生！&lt;/p&gt;&lt;h2 id=&#34;blog短期目标&#34;&gt;blog短期目标&lt;/h2&gt;&lt;p&gt;​记录每种课程所学到的东西，以及突发奇想查到的知识，如果可以或许还会记录摄影作品。以后会尽量多用英语创作改善专业英语水平//doge~。&lt;/p&gt;&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;&lt;p&gt;​本站主要自用。&lt;/p&gt;</description>
+       <guid>https://wzytrick.github.io/os/firstclass/</guid>
+       <description>&lt;h1 id=&#34;操作系统历史与学习方法&#34;&gt;操作系统历史与学习方法&lt;/h1&gt;</description>
      </item>
    
      <item>
-       <title>Test1</title>
-       <link>https://wzytrick.github.io/posts/test1/</link>
-       <pubDate>Sat, 23 Jan 2021 23:27:23 +0800</pubDate>
+       <title>Firstblog</title>
+       <link>https://wzytrick.github.io/os/firstblog/</link>
+       <pubDate>Sun, 24 Jan 2021 20:48:45 +0800</pubDate>
        <author>1679636965@qq.com (WZYtrick)</author>
-       <guid>https://wzytrick.github.io/posts/test1/</guid>
-       <description>&lt;p&gt;hello hugo! hello github! hello git!&lt;/p&gt;&lt;p&gt;hellooooooo&lt;/p&gt;&lt;p&gt;hellllllllo&lt;/p&gt;&lt;p&gt;&lt;img src=&#34;http://chuantu.xyz/t6/741/1611829026x2073530482.png&#34; alt=&#34;test&#34;&gt;&lt;/p&gt;</description>
+       <guid>https://wzytrick.github.io/os/firstblog/</guid>
+       <description></description>
      </item>
    
  </channel>
