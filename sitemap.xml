@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wzytrick.github.io/computernetwork/</loc>
+    <lastmod>2021-03-03T19:59:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzytrick.github.io/db/</loc>
+    <lastmod>2021-03-01T17:13:54+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wzytrick.github.io/datastructure/</loc>
     <lastmod>2021-01-25T23:17:19+08:00</lastmod>
   </url>
@@ -18,12 +28,22 @@
   </url>
   
   <url>
-    <loc>https://wzytrick.github.io/os/secondclass/</loc>
-    <lastmod>2021-02-09T21:40:48+08:00</lastmod>
+    <loc>https://wzytrick.github.io/computernetwork/class1/</loc>
+    <lastmod>2021-03-03T20:00:11+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://wzytrick.github.io/</loc>
+    <lastmod>2021-03-03T20:00:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzytrick.github.io/db/class1/</loc>
+    <lastmod>2021-03-01T17:37:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wzytrick.github.io/os/secondclass/</loc>
     <lastmod>2021-02-09T21:40:48+08:00</lastmod>
   </url>
   
