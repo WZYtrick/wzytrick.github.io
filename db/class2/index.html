@@ -1,0 +1,234 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Class2 - WZYtrick&#39;s Blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="WZYtrick&#39;s blog." />
+<meta name="author" content="WZYtrick" /><meta property="og:title" content="Class2" />
+<meta property="og:description" content="Relation Databases 基本概念 关系型数据库是一个表的概念，表头成为属性(attribute),一行为一个元组(tuple)，一个关系模式(relation schema)表示为R=(A1,A2,A3)(或表示为r(R))其中R是关系名，A123是属性，每个属性有它的域(domain)，就是它的范围。域是这个属性在这个关系中所有取值的集合，若A1域为D1,A2为D2，A3为D3则有该relation为D1,D2,D3的一个子集。
+​	tips:
+ relation是原子的(atomic)也就是例如两条记录     name acount     jack A101   jack A102    ​	其中两项不合并。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzytrick.github.io/db/class2/" />
+<meta property="article:published_time" content="2021-03-08T10:46:50+08:00" />
+<meta property="article:modified_time" content="2021-03-08T10:46:50+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Class2"/>
+<meta name="twitter:description" content="Relation Databases 基本概念 关系型数据库是一个表的概念，表头成为属性(attribute),一行为一个元组(tuple)，一个关系模式(relation schema)表示为R=(A1,A2,A3)(或表示为r(R))其中R是关系名，A123是属性，每个属性有它的域(domain)，就是它的范围。域是这个属性在这个关系中所有取值的集合，若A1域为D1,A2为D2，A3为D3则有该relation为D1,D2,D3的一个子集。
+​	tips:
+ relation是原子的(atomic)也就是例如两条记录     name acount     jack A101   jack A102    ​	其中两项不合并。"/>
+
+<meta name="generator" content="Hugo 0.80.0" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://wzytrick.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://wzytrick.github.io/css/styles.css" /></head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://wzytrick.github.io/">WZYtrick&rsquo;s Blog</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="mailto:1679636965@qq.com" title="Email me">
+               <i class="fas fa-envelope fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://github.com/WZYtrick" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+      <p><em>A blog which belongs to WZYtrick.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/computernetwork/">
+                <i class="fa-li fa  fa-lg"></i><span>Computer Network</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/datastructure/">
+                <i class="fa-li fa  fa-lg"></i><span>Data Structure</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/db/">
+                <i class="fa-li fa  fa-lg"></i><span>DataBase</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/os/">
+                <i class="fa-li fa  fa-lg"></i><span>OS</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Class2</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2021-03-08T10:46:50&#43;08:00">Mar 8, 2021</time>
+        </li>
+        
+        
+
+        
+
+        <li>One minute read</li>
+    </ul>
+</aside>
+
+    
+
+    
+<div class="featured_image">
+    <a href="https://wzytrick.github.io/db/class2/" title="Class2">
+        <img src="">
+    </a>
+</div>
+
+
+
+    <h1 id="relation-databases">Relation Databases</h1>
+<h2 id="基本概念">基本概念</h2>
+<p>关系型数据库是一个表的概念，表头成为属性(attribute),一行为一个元组(tuple)，一个关系模式(relation schema)表示为R=(A1,A2,A3)(或表示为r(R))其中R是关系名，A123是属性，每个属性有它的域(domain)，就是它的范围。域是这个属性在这个关系中所有取值的集合，若A1域为D1,A2为D2，A3为D3则有该relation为D1,D2,D3的一个子集。</p>
+<p>​	tips:</p>
+<ul>
+<li>relation是原子的(atomic)也就是例如两条记录</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>acount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jack</td>
+<td>A101</td>
+</tr>
+<tr>
+<td>jack</td>
+<td>A102</td>
+</tr>
+</tbody>
+</table>
+<p>​	其中两项不合并。</p>
+<ul>
+<li>
+<p>记录是无序的</p>
+</li>
+<li>
+<p>一般称某一个元组时，用元组变量(Tuple variable)来表述例如，</p>
+<p>t[name]=jack这条记录(元组)</p>
+</li>
+</ul>
+<h2 id="keys">keys</h2>
+<p>keys是r(R)的真子集</p>
+<ol>
+<li>super key 超码
+<ul>
+<li>若任意两tuple在这一个或一组attributes上可被区分，那么定义这一个或一组attribute为超码。</li>
+</ul>
+</li>
+<li>candidate key 候选码
+<ul>
+<li>作为超码的子集，候选码是最小的超码，它的子集必不是超码，例如姓名，ID是一组超码，而不是候选码，因为其子集ID可以作为超码。</li>
+</ul>
+</li>
+<li>primary key 主码
+<ul>
+<li>主码是候选码中的一个属性，它作为一个最特殊的属性，主要用于被查询的索引，例如身份证号，它具有不易变性。</li>
+</ul>
+</li>
+<li>foreign key 外码
+<ul>
+<li>设有关系r1,其中的一个属性A1是另一关系r2的primary key，则称r1的这个属性为外码。其中，r1称为引用关系(referencing relation)，r2称为被引用关系(referenced relation)</li>
+<li>值得注意的是，这里有一个Referential Integrity Constraints,它的意思是，如果这个属性是外码，那么他的值要么为空，要么在其引用的关系中有完整的定义。例如，银行中关系客户(姓名，电话号，账户，&hellip;.)其中账户为外码，对应关系账户(姓名，账户，存款，&hellip;)中的主码账户(因为一个人可以有多个银行账户)，而若客户关系中存在账户而账户关系中并没有存储就造成了错误。所以一定要保证先在账户中增添信息后再于客户中添加账户信息。</li>
+</ul>
+</li>
+</ol>
+<h2 id="schema-diagram">Schema diagram</h2>
+<p>模式图就像如下图示：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200415141359929.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>其中箭头又外码指向主码。</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://wzytrick.github.io/db/class1/"><i class="fa fa-chevron-circle-left"></i> Class1</a>
+        </li>
+        
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright © 2019 - WZYtrick |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://wzytrick.github.ioindex.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="https://wzytrick.github.io/js/scripts.js"></script>
+
+
+</body>
+
+</html>
+
