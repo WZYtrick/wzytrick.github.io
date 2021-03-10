@@ -13,32 +13,5 @@
        <atom:link href="https://wzytrick.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
    
    
-     <item>
-       <title>SecondClass</title>
-       <link>https://wzytrick.github.io/os/secondclass/</link>
-       <pubDate>Tue, 09 Feb 2021 21:40:48 +0800</pubDate>
-       <author>1679636965@qq.com (WZYtrick)</author>
-       <guid>https://wzytrick.github.io/os/secondclass/</guid>
-       <description></description>
-     </item>
-   
-     <item>
-       <title>FirstClass</title>
-       <link>https://wzytrick.github.io/os/firstclass/</link>
-       <pubDate>Thu, 04 Feb 2021 23:57:45 +0800</pubDate>
-       <author>1679636965@qq.com (WZYtrick)</author>
-       <guid>https://wzytrick.github.io/os/firstclass/</guid>
-       <description>&lt;h1 id=&#34;操作系统历史与学习方法&#34;&gt;操作系统历史与学习方法&lt;/h1&gt;&lt;h2 id=&#34;一操作系统定义&#34;&gt;一、操作系统定义&lt;/h2&gt;&lt;p&gt;​通常没有准确的定义，计算机的根本目的是执行用户程序并更的容易解决用户问题，由此设计了计算机硬件，由于硬件本身不容易直接使用，这些控制和分配I/O资源的共同功能被组成一个软件模块：操作系统。&lt;/p&gt;&lt;p&gt;​操作系统分为外壳（shell）以及内核（kernel），外壳即界面，与用户交互部分，内核是与底层硬件交互的部分。&lt;/p&gt;&lt;p&gt;​移动操作系统通常还有中间件（middleware）以便支持数据、多媒体、图形等。&lt;/p&gt;&lt;h2 id=&#34;二先修课&#34;&gt;二、先修课&lt;/h2&gt;&lt;p&gt;​汇编、C、Rust，数据结构，计算机组成原理（Patterson的RISC-V），编译原理（了解）&lt;/p&gt;&lt;h2 id=&#34;三学习资源&#34;&gt;三、学习资源&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;+ b站搜清华大学操作系统+ Berkeley CS162+ 会议论文 SOSP OSENIX+ 书籍 机械工业出版社 操作系统概论；Linux kernel Development&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;四操作系统历史&#34;&gt;四、操作系统历史&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;单用户系统&lt;/li&gt;&lt;li&gt;批处理系统&lt;/li&gt;&lt;li&gt;多道程序系统&lt;/li&gt;&lt;li&gt;分时系统&lt;/li&gt;&lt;li&gt;个人电脑&lt;/li&gt;&lt;li&gt;分布式系统&lt;/li&gt;&lt;li&gt;AIoT(人工智能+物联网)&lt;/li&gt;&lt;/ol&gt;&lt;h2 id=&#34;五开源操作系统&#34;&gt;五、开源操作系统&lt;/h2&gt;&lt;p&gt;​最著名的开源：Linux&lt;/p&gt;&lt;p&gt;​最著名的闭源：Windows&lt;/p&gt;&lt;p&gt;​kernel开源，专用组件闭源：Mac OS，iOS&lt;/p&gt;&lt;p&gt;​Richard Stallman于1983年设立GNU项目，创建一个免费开源的兼容UNIX的操作系统。设立自由软件基金会(Free Software Foundation,FSF)&lt;/p&gt;&lt;p&gt;虚拟机 VMware Player (&lt;a href=&#34;http://www.vmware.com/download/player&#34;&gt;http://www.vmware.com/download/player&lt;/a&gt;)&lt;/p&gt;&lt;p&gt;BSD源码位于/usr/src目录下，kernel源码位于/usr/src/sys下&lt;/p&gt;&lt;p&gt;Darwin为Mac OSX的核心内核组件，是基于BSD UNIX的。源码(&lt;a href=&#34;http://www.opensource.apple.com&#34;&gt;http://www.opensource.apple.com&lt;/a&gt;)包含内核包的名称以xnu为开始。另外，(&lt;a href=&#34;http://connect.apple.com&#34;&gt;http://connect.apple.com&lt;/a&gt;)上提供了大量开发工具、文档、支持。&lt;/p&gt;&lt;p&gt;Solaris为Sun公司基于UNIX开发，于2005年开源了部分代码(&lt;a href=&#34;http://src.opensolaris.org/source&#34;&gt;http://src.opensolaris.org/source&lt;/a&gt;)，于2009年被Oracle收购后前景不明。对于OpenSolaris感兴趣的组织利用这部分源码作为基础，扩展功能创建新项目名为Illumos(&lt;a href=&#34;http://wiki.illumos.org&#34;&gt;http://wiki.illumos.org&lt;/a&gt;)。&lt;/p&gt;&lt;p&gt;作为学习开源操作系统&lt;/p&gt;&lt;p&gt;网站：http://freshmeat.neg/       &lt;a href=&#34;http://distrowatch.com/&#34;&gt;http://distrowatch.com/&lt;/a&gt;  提供许多项目利用源码学习。&lt;/p&gt;</description>
-     </item>
-   
-     <item>
-       <title>Firstblog</title>
-       <link>https://wzytrick.github.io/os/firstblog/</link>
-       <pubDate>Sun, 24 Jan 2021 20:48:45 +0800</pubDate>
-       <author>1679636965@qq.com (WZYtrick)</author>
-       <guid>https://wzytrick.github.io/os/firstblog/</guid>
-       <description></description>
-     </item>
-   
  </channel>
 </rss>
