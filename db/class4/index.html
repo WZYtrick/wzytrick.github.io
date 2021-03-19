@@ -8,7 +8,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="WZYtrick&#39;s blog." />
 <meta name="author" content="WZYtrick" /><meta property="og:title" content="Class4" />
-<meta property="og:description" content="SQL " />
+<meta property="og:description" content="SQL Basic types   char(n) (character)
+固定长度n的字符串，如果数据长度不为n则用空格填充。如果两个不同长度的char(n)比较，则较短的那个会用空格补长与长的相同。
+  varchar(n) (character varying)
+可变长度的字符串，其长度最多为n，varchar在与char进行比较时，有些数据库会将他们补齐长度，而有些数据库不会，所以一般统一使用varchar定义字符串类型。
+  int (integer)
+整数，长度依赖于机器，MySQL中四个字节。
+  smallint
+比int小的整数，长度依赖于机器，MySQL中两个字节。
+  numeric(p,d)
+用户自定义定点数，p表示有p个数字，d表示小数点在从右往左数第几位，例如numeric(10,2)表示可以存十位，小数点后两位的数字。
+  real,double precision" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzytrick.github.io/db/class4/" />
 <meta property="article:published_time" content="2021-03-15T20:10:08+08:00" />
@@ -16,7 +26,17 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Class4"/>
-<meta name="twitter:description" content="SQL "/>
+<meta name="twitter:description" content="SQL Basic types   char(n) (character)
+固定长度n的字符串，如果数据长度不为n则用空格填充。如果两个不同长度的char(n)比较，则较短的那个会用空格补长与长的相同。
+  varchar(n) (character varying)
+可变长度的字符串，其长度最多为n，varchar在与char进行比较时，有些数据库会将他们补齐长度，而有些数据库不会，所以一般统一使用varchar定义字符串类型。
+  int (integer)
+整数，长度依赖于机器，MySQL中四个字节。
+  smallint
+比int小的整数，长度依赖于机器，MySQL中两个字节。
+  numeric(p,d)
+用户自定义定点数，p表示有p个数字，d表示小数点在从右往左数第几位，例如numeric(10,2)表示可以存十位，小数点后两位的数字。
+  real,double precision"/>
 
 <meta name="generator" content="Hugo 0.80.0" />
     
@@ -127,7 +147,81 @@
 
 
     <h1 id="sql">SQL</h1>
+<h2 id="basic-types">Basic types</h2>
+<ul>
+<li>
+<p>char(n) (character)</p>
+<p>固定长度n的字符串，如果数据长度不为n则用空格填充。如果两个不同长度的char(n)比较，则较短的那个会用空格补长与长的相同。</p>
+</li>
+<li>
+<p>varchar(n) (character varying)</p>
+<p>可变长度的字符串，其长度最多为n，varchar在与char进行比较时，有些数据库会将他们补齐长度，而有些数据库不会，所以一般统一使用varchar定义字符串类型。</p>
+</li>
+<li>
+<p>int (integer)</p>
+<p>整数，长度依赖于机器，MySQL中四个字节。</p>
+</li>
+<li>
+<p>smallint</p>
+<p>比int小的整数，长度依赖于机器，MySQL中两个字节。</p>
+</li>
+<li>
+<p>numeric(p,d)</p>
+<p>用户自定义定点数，p表示有p个数字，d表示小数点在从右往左数第几位，例如numeric(10,2)表示可以存十位，小数点后两位的数字。</p>
+</li>
+<li>
+<p>real,double precision</p>
+<p>浮点，双精度浮点类型。</p>
+</li>
+<li>
+<p>float(n)</p>
+<p>浮点数，最少n个数字。</p>
+</li>
+</ul>
+<p><strong>每个数据类型都有一个值为空。</strong></p>
+<h2 id="basic-schema-definition">Basic schema definition</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> r1(A1 D1,
+                A2 D2 <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+                ....,
+                An Dn,
+              	<span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> (A1,A2),
+              	<span style="color:#66d9ef">foreign</span> <span style="color:#66d9ef">key</span> (A3) <span style="color:#66d9ef">references</span> r2);
+</code></pre></div><p>​	上面展示了如何创建一个关系，not null表示这一属性不可以为空值，在写完属性与其域(domain)后，还要添加主键外键这些完整性约束(integrity constraints)。</p>
+<p>最初关系是空的，先可用insert命令向关系中加载数据。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> r
+	<span style="color:#66d9ef">values</span>(v1,v2,...,vn);
+</code></pre></div><p>从关系中删除所有元组，只保留其schema。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> r;
+</code></pre></div><p>删除一个关系(删除整张表)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> r;
+</code></pre></div><p>向关系中增加/删除属性，其初始值为null,A是属性名，D是域(部分数据库不支持alter语句)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> r <span style="color:#66d9ef">add</span> A D;
+<span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> r <span style="color:#66d9ef">drop</span> A;
+</code></pre></div><h2 id="sql查询基本结构">SQL查询基本结构</h2>
+<p>一般结构为：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">distinct</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">all</span> (<span style="color:#960050;background-color:#1e0010">去除重复使用</span><span style="color:#66d9ef">distinct</span><span style="color:#960050;background-color:#1e0010">，默认为</span><span style="color:#66d9ef">all</span>) A1 <span style="color:#66d9ef">as</span> x,A2...
+<span style="color:#66d9ef">from</span> r1,r2 <span style="color:#66d9ef">as</span> y...
+<span style="color:#66d9ef">where</span> P1 <span style="color:#66d9ef">and</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">or</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">not</span> P2 (A1 <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%yagfyg%&#39;</span>) <span style="color:#f92672">#</span> <span style="color:#f92672">%</span><span style="color:#960050;background-color:#1e0010">为通配符</span>
+<span style="color:#f92672">#</span> <span style="color:#66d9ef">where</span> A1 <span style="color:#66d9ef">between</span> <span style="color:#ae81ff">100</span> <span style="color:#66d9ef">and</span> <span style="color:#ae81ff">200</span> <span style="color:#960050;background-color:#1e0010">在一百到两百之间</span>
+<span style="color:#f92672">#</span> <span style="color:#66d9ef">where</span> A1 <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">null</span>
+<span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> A1 <span style="color:#66d9ef">desc</span> , A2 <span style="color:#66d9ef">asc</span> ;<span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">按</span>A1<span style="color:#f92672">/</span>A2属性 <span style="color:#960050;background-color:#1e0010">降序</span><span style="color:#f92672">/</span><span style="color:#960050;background-color:#1e0010">升序排列</span>
+</code></pre></div><p>两个集合并集 、交集、差集(SQL只支持并操作)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">(<span style="color:#66d9ef">select</span> ...) <span style="color:#66d9ef">union</span> (<span style="color:#66d9ef">select</span> ...);
+(<span style="color:#66d9ef">select</span> ...) <span style="color:#66d9ef">intersect</span> (<span style="color:#66d9ef">select</span> ...);
+(<span style="color:#66d9ef">select</span> ...) <span style="color:#66d9ef">except</span> (<span style="color:#66d9ef">select</span> ...);
+</code></pre></div><p>一些聚合函数的使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#66d9ef">distinct</span> A1) <span style="color:#66d9ef">from</span> r <span style="color:#66d9ef">where</span> ...;
 
+<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">avg</span>(A1) <span style="color:#66d9ef">as</span> avg_A1 <span style="color:#66d9ef">from</span> r;
+
+<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> r;
+</code></pre></div><p>分组聚集</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> A2,<span style="color:#66d9ef">avg</span>(A1) <span style="color:#66d9ef">as</span> avg_A1
+<span style="color:#66d9ef">from</span> r
+<span style="color:#66d9ef">where</span> ...
+<span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> A2
+<span style="color:#66d9ef">having</span> <span style="color:#66d9ef">avg</span>(A1)<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1000</span>;
+</code></pre></div>
 
 </article>
 
