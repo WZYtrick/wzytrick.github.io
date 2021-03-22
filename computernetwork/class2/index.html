@@ -8,7 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="WZYtrick&#39;s blog." />
 <meta name="author" content="WZYtrick" /><meta property="og:title" content="Class2" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Link layer and LANs ​	The goal of data-link layer is transferring datagram from one node to adjacent(相邻) node over a link.
+Services provided by Link Layer   Framing , link access" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://wzytrick.github.io/computernetwork/class2/" />
 <meta property="article:published_time" content="2021-03-17T14:01:33+08:00" />
@@ -16,7 +17,8 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Class2"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Link layer and LANs ​	The goal of data-link layer is transferring datagram from one node to adjacent(相邻) node over a link.
+Services provided by Link Layer   Framing , link access"/>
 
 <meta name="generator" content="Hugo 0.80.0" />
     
@@ -111,7 +113,7 @@
 
         
 
-        <li>0 minutes read</li>
+        <li>One minute read</li>
     </ul>
 </aside>
 
@@ -126,7 +128,136 @@
 
 
 
-    
+    <h1 id="link-layer--and-lans">Link layer  and LANs</h1>
+<p>​	The goal of data-link layer is <strong>transferring datagram from one node to adjacent(相邻) node</strong> over a link.</p>
+<h2 id="services-provided-by-link-layer">Services provided by Link Layer</h2>
+<ul>
+<li>
+<p>Framing , link access</p>
+<ul>
+<li>
+<p>encapsulate datagram into frame(加入header,trailer 一般头部添加用于寻址的数据，尾部添加校验的数据)</p>
+</li>
+<li>
+<p>medium access control</p>
+</li>
+</ul>
+</li>
+<li>
+<p>数据发送的可靠性</p>
+<ul>
+<li>在有线网络中很少发生错误(fiber光纤 twisted pair双绞线)</li>
+<li>在无线网络中发生错误频率更高(WIFI)</li>
+</ul>
+</li>
+<li>
+<p>Flow control 流控制</p>
+<p>发送节点与接收节点需要保持相同的发送接收速度，防止产生丢包等情况</p>
+</li>
+<li>
+<p>Error Detection and Correction</p>
+</li>
+<li>
+<p>实现Half-duplex(半双工) 或Full-duplex(全双工)</p>
+</li>
+</ul>
+<h2 id="where-is-the-link-layer-implemented">Where is the Link Layer implemented?</h2>
+<p>链路层主体部分实现于网络适配器也称网络接口卡(network adapter/network interface card,NIC)</p>
+<h2 id="error-detection-and-correction">Error Detection and Correction</h2>
+<p>Error-Detection and-Correction bit : EDC</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202103/20/123920-998535.png" alt="校验edc图"></p>
+<h3 id="几种常见的校验方式">几种常见的校验方式</h3>
+<ul>
+<li>
+<p>奇偶校验 Parity Checking</p>
+<p>使用单个bit的奇偶校验，凑一位1使1的总数变为偶数。</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202103/20/123927-590685.png" alt="奇偶校验单个"></p>
+<p>二维奇偶校验，同一维操作。</p>
+<p><img src="C:\Users\16796\Desktop\.md图片\二维奇偶校验.PNG" alt="二维奇偶校验" style="zoom:80%;" /></p>
+</li>
+<li>
+<p>检验和 Internet Checksum</p>
+<p>将字段每16bit作为一个整数对整个字段求和将结果作为校验码发送给接收端，接收端校验数据是否正确。</p>
+</li>
+<li>
+<p>循环冗余检测 Cyclic Redundancy Check</p>
+<p>取定一个用于验证的除数(这里被称作生成多项式)</p>
+<p>将数据作为01串补除数减一位的0除以除数，将数据与余数发送给接收方，接收方验证数据加余数除以验证除数，若结果为0则数据正确。其中二进制除法可以通过逻辑电路异或操作执行。大大加快的信息验证的速度。</p>
+<p>其中，IEEE定义了八位，十六位，三十二位的生成多项式</p>
+</li>
+</ul>
+<h2 id="链路层的两类链路">链路层的两类链路</h2>
+<h3 id="一点对点链路-point-to-point">一、点对点链路 point-to-point</h3>
+<ul>
+<li>PPP 拨号网络</li>
+<li>以太网交换机与主机之间</li>
+</ul>
+<p>常见的有PPP，HDLC协议</p>
+<h3 id="二广播链路-broadcast-link">二、广播链路 broadcast link</h3>
+<ul>
+<li>传统以太网</li>
+<li>HFC 光纤</li>
+<li>802.11 WIFI</li>
+</ul>
+<h2 id="多路访问协议-multiple-access-protocols">多路访问协议 multiple access protocols</h2>
+<h3 id="一-channel-partitioning-mac-protocols">一、 Channel Partitioning MAC protocols</h3>
+<ol>
+<li>TDMA :time division multiple access</li>
+<li>FDMA :frequency division multiple access</li>
+</ol>
+<p>分频主要用于家庭网络下行数据(例如有线电视)</p>
+<p>分时主要用于家用网络上行数据</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202103/20/163857-145047.png" alt="TDMA和FDMA示意图"></p>
+<h3 id="二random-access-protocols">二、Random Access Protocols</h3>
+<ol>
+<li>
+<p>slotted ALOHA 时隙ALOHA</p>
+<p>​	同步网络下所有时钟，将时钟划分为等长的片段，每个片段仅发送一个frame，若检测到冲突则等待下个时钟再发送。</p>
+<p>​	缺点主要为需要进行时钟同步成本较高。</p>
+<p>​	其效率为37%。</p>
+</li>
+<li>
+<p>Pure(unslotted) ALOHA</p>
+<p>​	不需要时钟同步，想发就发。</p>
+<p>​	缺点很明显，拥塞严重。</p>
+<p>​	效率为18%。</p>
+</li>
+<li>
+<p>CSMA(Carrier Sense Multiple Access) 载波监听多路访问</p>
+<p>在发送数据前先监听信道是否有数据被发送，若有数据正在发送，则延迟发送。</p>
+<p>存在的问题如下图。</p>
+</li>
+</ol>
+<p><img src="C:\Users\16796\Desktop\.md图片\CSMA弊端示意图.PNG" alt="CSMA弊端示意图" style="zoom:50%;" /></p>
+<p>​		当B节点发送数据后的t1时刻D节点将要发送数据，D节点监听信道而B的数据由于延迟并未	传播到D节点导致D发送了数据，而冲突产生了。</p>
+<p>​		缺点明显为大量时间由于冲突被浪费。</p>
+<ol start="4">
+<li>
+<p>CSMA/CD(Collision Detection)具有冲突检测的载波监听多路访问</p>
+<p>​	节点发送数据后始终检测信道状态，若出现冲突(体现为电信号的干涉或叠加)则立即停止发送数据。并广播一条干扰信号用于提示各个节点当前状态为拥塞。</p>
+<p>​	由于监听方式分为有线与无线，显然有线信号更容易被监听，所以CSMA/CD主要用于有线网络的通信，而无线网络采用CSMA/CA 是一种数据发送前监听时间更长，宁可损耗性能也保证数据传输准确的协议。</p>
+<p>​	对于其缺点的解决方案有，限制节点之间的长度，限制网络内部的段数(双绞线最长100米，以太网最多五段)</p>
+</li>
+<li>
+<p>Taking turns MAC protocol 轮流协议</p>
+<p>(1) 有主控的轮流协议</p>
+<p>​	有一个主机，负责调度，其他机器想要发送数据需要“举手” 主机会将令牌发送给举手的用户机器。</p>
+<p>​	显然，它的缺点为需要一台主机，主机gg就都gg，轮巡开销大，延迟较高。</p>
+<p>(2) 环路无主控的轮流协议</p>
+<p>​	无主机所有机器围成环形，令牌按顺序传递，得到令牌的机器发送数据。</p>
+<p>​	缺点几乎同上。</p>
+<p>​	其适用于多节点，低频，小数据量的网络，例如蓝牙网络，FDDI</p>
+</li>
+</ol>
+<h2 id="lan">LAN</h2>
+<h3 id="maclanphysicalethernet--address">MAC(LAN/physical/Ethernet)  address</h3>
+<p>MAC地址作为一个链路层地址标识，其具有不可变性，即每个网络适配器(网卡)都有唯一的出场自带的MAC地址，该地址为48bit用十六进制数表示e.g.1A-2F-BB-76-09-AD</p>
+<p>其中有一个地址FF-FF-FF-FF-FF-FF作为广播地址(Broadcast address)</p>
+<p>MAC地址由IEEE分配，每个网络适配器制造商向IEEE购买一段地址。</p>
+<h3 id="arp--address-resolution-protocol">ARP : Address Resolution Protocol</h3>
+<p>每个IP地址对应一个MAC地址，该映射由一张ARP表保存，该表中包括IP，MAC，TTL(有效期，一般是20分钟)</p>
+<p>当A要向B发送数据，而A的ARP表中不存在B的对应MAC，这时，A向局域网内广播(FF-FF-FF-FF-FF-FF)一条询问信息，B收到该信息会进行应答，B将自己的MAC地址发给A，这时A的ARP表存储了B的MAC。</p>
+
 
 </article>
 
