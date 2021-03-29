@@ -113,7 +113,7 @@ Services provided by Link Layer   Framing , link access"/>
 
         
 
-        <li>One minute read</li>
+        <li>2 minutes read</li>
     </ul>
 </aside>
 
@@ -257,6 +257,90 @@ Services provided by Link Layer   Framing , link access"/>
 <h3 id="arp--address-resolution-protocol">ARP : Address Resolution Protocol</h3>
 <p>每个IP地址对应一个MAC地址，该映射由一张ARP表保存，该表中包括IP，MAC，TTL(有效期，一般是20分钟)</p>
 <p>当A要向B发送数据，而A的ARP表中不存在B的对应MAC，这时，A向局域网内广播(FF-FF-FF-FF-FF-FF)一条询问信息，B收到该信息会进行应答，B将自己的MAC地址发给A，这时A的ARP表存储了B的MAC。</p>
+<h2 id="ethernet">Ethernet</h2>
+<p>frame 组成： preamble  dest_address  src_address  type  data  CRC</p>
+<ul>
+<li>preamble 八字节：10101010+pattern+10101011，用于定位一个frame的开始和结束，被用于同步接收与发送方的时钟，让接收方清空缓存区以待接收数据。</li>
+<li>address 六字节 MAC地址</li>
+<li>type 用于标识高层(网络层)所用的协议  2字节</li>
+<li>CRC 校验码</li>
+</ul>
+<p>无效的frame：</p>
+<ul>
+<li>frame长度不是整数个字节</li>
+<li>CRC码检测出错误</li>
+<li>data长度不在46-1500个字节之间</li>
+<li>frame长度不在64-1518个字节之间</li>
+</ul>
+<h2 id="csmacd-补充">CSMA/CD 补充</h2>
+<p>当检测到冲突时，节点停止发送数据并发送一个48bit的干扰信号。称为强化碰撞。</p>
+<p>对于10Mbps的以太网而言，若产生了n次冲突，则在集合k={0，1，2<sup>n</sup>-1&hellip;2<sup>10</sup>-1}中选择一个k(n最多为10)，停顿__k*512bit传输时间__后继续传输数据。</p>
+<p>对于产生冲突的链路，先发送数据的节点在发送数据后之多2倍的端到端传输时间就可以检测到是否发生冲突，若这段时间内没有检测到碰撞，则说明本次发送一定不会产生冲突。这个时间成为__争用期或碰撞窗口__。对于10Mbps的以太网而言，争用期一般为__51.2微秒__，即发送64字节。这64个字节称为__最短有效帧长__。</p>
+<p>帧间最小间隔：9.6微秒，相当于96bit的发送时间，即，当节点检测到总线开始空闲后，等待9.6微秒后才可继续发送数据。这个时间用于接收方清空缓存，为接收下一帧做准备。</p>
+<h2 id="术语">术语</h2>
+<h3 id="10base-t--100-base-t">10Base T / 100 Base T</h3>
+<p>T表示Twisted Pair双绞线，意思是10/100Mbps的双绞线，后者被称为高速以太网。</p>
+<h3 id="gbit-ethernet">Gbit Ethernet</h3>
+<p>在半双工下使用CSMA/CD协议，全双工下不使用。</p>
+<ul>
+<li>
+<p>1000BASE-X 基于光纤的物理层</p>
+<ul>
+<li>1000BASE-SX 短波</li>
+<li>1000BASE-LX 长波</li>
+<li>1000BASE-CX 铜线</li>
+</ul>
+</li>
+<li>
+<p>1000BASE-T</p>
+<p>使用四对5类线UTP</p>
+</li>
+</ul>
+<h3 id="100base-tx">100BASE-TX</h3>
+<p>使用两对UTP 5类线或使用屏蔽双绞线STP</p>
+<h3 id="100base-fx">100BASE-FX</h3>
+<p>使用两对光纤</p>
+<h3 id="100base-t4">100BASE-T4</h3>
+<p>使用四对UTP 3类线或5类线</p>
+<h3 id="10gbit-以太网">10Gbit 以太网</h3>
+<p>帧格式不变(向下兼容)，只在全双工方式下工作，不使用CSMA/CD</p>
+<h2 id="hubs-and-switches">Hubs and switches</h2>
+<ol>
+<li>中继器 用于放大信号</li>
+<li>转换器 用于信号光电转换</li>
+<li>集线器hubs 多端口中继器</li>
+<li>交换机switches</li>
+</ol>
+<p>上面只有交换机是链路层设备，即只有交换机有链路层的协议与功能</p>
+<h3 id="交换机">交换机</h3>
+<p>存储转发以太网的帧，找寻MAC地址，能够自主“学习”端口对应的主机MAC，方法为：A向B发送数据帧，经过交换机转发，经过交换机时，交换机记录A的MAC与其端口对应关系保存在表(switch forwarding table)中，并向其他端口广播A的消息，B回应，交换机记录B与其端口的对应关系。</p>
+<h2 id="vlans">VLANs</h2>
+<p>即虚拟局域网，通过对于交换机的端口划分，可以形成逻辑上的另外一个局域网。交换机的收尾端口一般用作连接其他交换机。</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202103/29/214322-912615.png" alt="虚拟局域网帧格式"></p>
+<h1 id="point-to-point">Point to Point</h1>
+<ul>
+<li>
+<p>PPP</p>
+</li>
+<li>
+<p>HDLC</p>
+</li>
+</ul>
+<p>使用SOH,EOT标记帧开始与结尾</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202103/29/215310-885139.png" alt="SOHEOT"></p>
+<h2 id="ppp">PPP</h2>
+<ul>
+<li>一个将 IP 数据报封装到串行链路的方法。</li>
+<li>链路控制协议 LCP (Link Control Protocol)。</li>
+<li>网络控制协议 NCP (Network Control Protocol)。</li>
+</ul>
+<p>PPP帧格式：</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202103/29/215613-768095.png" alt="PPP帧格式"></p>
+<h3 id="工作状态">工作状态</h3>
+<p>​	当用户拨号接入 ISP 时，路由器的调制解调器对拨号做出确认，并建立一条物理连接。
+PC 机向路由器发送一系列的 LCP 分组（封装成多个 PPP 帧）。
+​	这些分组及其响应选择一些 PPP 参数，和进行网络层配置，NCP 给新接入的 PC机分配一个临时的 IP 地址，使 PC 机成为因特网上的一个主机。
+​	通信完毕时，NCP 释放网络层连接，收回原来分配出去的 IP 地址。接着，LCP 释放数据链路层连接。最后释放的是物理层的连接。</p>
 
 
 </article>
