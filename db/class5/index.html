@@ -1,0 +1,204 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Class5 - WZYtrick&#39;s Blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="WZYtrick&#39;s blog." />
+<meta name="author" content="WZYtrick" /><meta property="og:title" content="Class5" />
+<meta property="og:description" content="一些高级SQL查询操作 集合成员资格 select A from r where xxx and A in / not in (select A from where xxx) 这里in/not in指前面A这个或这些元素是否存在于子查询的集合中，将存在的查询出来
+集合的比较 select A1 from r where A2 &gt; some/all (select A2 from r2 where ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzytrick.github.io/db/class5/" />
+<meta property="article:published_time" content="2021-03-30T14:58:54+08:00" />
+<meta property="article:modified_time" content="2021-03-30T14:58:54+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Class5"/>
+<meta name="twitter:description" content="一些高级SQL查询操作 集合成员资格 select A from r where xxx and A in / not in (select A from where xxx) 这里in/not in指前面A这个或这些元素是否存在于子查询的集合中，将存在的查询出来
+集合的比较 select A1 from r where A2 &gt; some/all (select A2 from r2 where ."/>
+
+<meta name="generator" content="Hugo 0.80.0" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://wzytrick.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://wzytrick.github.io/css/styles.css" /></head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://wzytrick.github.io/">WZYtrick&rsquo;s Blog</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="mailto:1679636965@qq.com" title="Email me">
+               <i class="fas fa-envelope fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://github.com/WZYtrick" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+      <p><em>A blog which belongs to WZYtrick.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/computernetwork/">
+                <i class="fa-li fa  fa-lg"></i><span>Computer Network</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/datastructure/">
+                <i class="fa-li fa  fa-lg"></i><span>Data Structure</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/db/">
+                <i class="fa-li fa  fa-lg"></i><span>DataBase</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/os/">
+                <i class="fa-li fa  fa-lg"></i><span>OS</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Class5</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2021-03-30T14:58:54&#43;08:00">Mar 30, 2021</time>
+        </li>
+        
+        
+
+        
+
+        <li>One minute read</li>
+    </ul>
+</aside>
+
+    
+
+    
+<div class="featured_image">
+    <a href="https://wzytrick.github.io/db/class5/" title="Class5">
+        <img src="">
+    </a>
+</div>
+
+
+
+    <h1 id="一些高级sql查询操作">一些高级SQL查询操作</h1>
+<h2 id="集合成员资格">集合成员资格</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> A <span style="color:#66d9ef">from</span> r
+<span style="color:#66d9ef">where</span> xxx <span style="color:#66d9ef">and</span> A <span style="color:#66d9ef">in</span> <span style="color:#f92672">/</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">in</span> (<span style="color:#66d9ef">select</span> A <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">where</span> xxx)
+</code></pre></div><p>这里in/not in指前面A这个或这些元素是否存在于子查询的集合中，将存在的查询出来</p>
+<h2 id="集合的比较">集合的比较</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> A1 <span style="color:#66d9ef">from</span> r
+<span style="color:#66d9ef">where</span> A2 <span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">some</span><span style="color:#f92672">/</span><span style="color:#66d9ef">all</span> (<span style="color:#66d9ef">select</span> A2 <span style="color:#66d9ef">from</span> r2 <span style="color:#66d9ef">where</span> ...)
+</code></pre></div><p>这里some、all指A2这个元素的值大于部分/大于全部后方子查询的属性值。符号可以使用&gt; &lt; &lt;= &gt;= = &lt;&gt;</p>
+<p>注意:&lt;&gt;some 不等价于not in，=all 不等价于in</p>
+<h2 id="空关系测试">空关系测试</h2>
+<p>例：</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202103/30/164743-342425.png" alt="notexists例子"></p>
+<p>其中的exists表示后面的子查询挂载于主查询，即，当主查询在判断一个元组是否应被选中是，还要看这个元组中的元素是否满足子查询的条件。</p>
+<p>这里一般使用两个not exists来双重否定表达肯定，通过重命名操作将主查询与子查询的元素关联到一起。</p>
+<h2 id="with-子句">with 子句</h2>
+<p>使逻辑更加清晰</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">with</span> a_name(A1,A2,..) <span style="color:#66d9ef">as</span>
+	(<span style="color:#66d9ef">select</span> xxx <span style="color:#66d9ef">from</span> xxx <span style="color:#66d9ef">where</span> xxx)
+	sec_name(A3,A4,..) <span style="color:#66d9ef">as</span>
+	(...)
+<span style="color:#66d9ef">select</span> A1
+<span style="color:#66d9ef">from</span> xxx,a_name,sec_name
+<span style="color:#66d9ef">where</span> xxx
+</code></pre></div><p>将一个查询表封装到一个with中，在后面的主查询中使用，使逻辑更加清晰。MySQL8以上支持？</p>
+<h2 id="连接表达式">连接表达式</h2>
+<p>连接条件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span>
+<span style="color:#66d9ef">from</span> r1 <span style="color:#66d9ef">join</span> r2 <span style="color:#66d9ef">on</span> r1.A1<span style="color:#f92672">=</span>R2.A1
+</code></pre></div><p>外连接</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> 
+<span style="color:#66d9ef">from</span> r1 <span style="color:#66d9ef">natural</span> <span style="color:#66d9ef">left</span><span style="color:#f92672">/</span><span style="color:#66d9ef">right</span><span style="color:#f92672">/</span><span style="color:#66d9ef">full</span> <span style="color:#66d9ef">join</span> r2
+</code></pre></div>
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://wzytrick.github.io/db/class4/"><i class="fa fa-chevron-circle-left"></i> Class4</a>
+        </li>
+        
+        
+        <li>
+            <a href="https://wzytrick.github.io/db/class6/">Class6 <i class="fa fa-chevron-circle-right"></i> </a>
+        </li>
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright © 2019 - WZYtrick |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://wzytrick.github.ioindex.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="https://wzytrick.github.io/js/scripts.js"></script>
+
+
+</body>
+
+</html>
+
