@@ -1,0 +1,219 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Class3 - WZYtrick&#39;s Blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="WZYtrick&#39;s blog." />
+<meta name="author" content="WZYtrick" /><meta property="og:title" content="Class3" />
+<meta property="og:description" content="Network Layer Data Plane Inside the router   Input / Output ports 数据平面
+端口为双工端口，其中存有路由表。
+​	其中以输入端为例，端口实现物理层，链路层，以及部分网络层功能(查表，转发，输入的未处理的数据形成的缓存队列)
+Longest prefix matching 最长前缀匹配
+​	端口的转发表中存着一些目的地址，当一个IP进入端口后，端口查表，根据匹配到的前缀最长的地址转发数据。
+  Switching fabric 交换单元
+switch rate: 输出/输入" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wzytrick.github.io/computernetwork/class3/" />
+<meta property="article:published_time" content="2021-04-06T18:00:37+08:00" />
+<meta property="article:modified_time" content="2021-04-06T18:00:37+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Class3"/>
+<meta name="twitter:description" content="Network Layer Data Plane Inside the router   Input / Output ports 数据平面
+端口为双工端口，其中存有路由表。
+​	其中以输入端为例，端口实现物理层，链路层，以及部分网络层功能(查表，转发，输入的未处理的数据形成的缓存队列)
+Longest prefix matching 最长前缀匹配
+​	端口的转发表中存着一些目的地址，当一个IP进入端口后，端口查表，根据匹配到的前缀最长的地址转发数据。
+  Switching fabric 交换单元
+switch rate: 输出/输入"/>
+
+<meta name="generator" content="Hugo 0.80.0" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://wzytrick.github.io/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://wzytrick.github.io/css/styles.css" /></head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://wzytrick.github.io/">WZYtrick&rsquo;s Blog</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="mailto:1679636965@qq.com" title="Email me">
+               <i class="fas fa-envelope fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://github.com/WZYtrick" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+      <p><em>A blog which belongs to WZYtrick.</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/computernetwork/">
+                <i class="fa-li fa  fa-lg"></i><span>Computer Network</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/datastructure/">
+                <i class="fa-li fa  fa-lg"></i><span>Data Structure</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/db/">
+                <i class="fa-li fa  fa-lg"></i><span>DataBase</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/os/">
+                <i class="fa-li fa  fa-lg"></i><span>OS</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://wzytrick.github.io/posts/">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Class3</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2021-04-06T18:00:37&#43;08:00">Apr 6, 2021</time>
+        </li>
+        
+        
+
+        
+
+        <li>One minute read</li>
+    </ul>
+</aside>
+
+    
+
+    
+<div class="featured_image">
+    <a href="https://wzytrick.github.io/computernetwork/class3/" title="Class3">
+        <img src="">
+    </a>
+</div>
+
+
+
+    <h1 id="network-layer">Network Layer</h1>
+<h2 id="data-plane">Data Plane</h2>
+<h3 id="inside-the-router">Inside the router</h3>
+<ul>
+<li>
+<p>Input / Output ports          数据平面</p>
+<p>端口为双工端口，其中存有路由表。</p>
+<p>​	其中以输入端为例，端口实现物理层，链路层，以及部分网络层功能(查表，转发，输入的未处理的数据形成的缓存队列)</p>
+<p><strong>Longest prefix matching 最长前缀匹配</strong></p>
+<p>​	端口的转发表中存着一些目的地址，当一个IP进入端口后，端口查表，根据匹配到的前缀最长的地址转发数据。</p>
+</li>
+<li>
+<p>Switching fabric 交换单元</p>
+<p><strong>switch rate</strong>: 输出/输入</p>
+<p>交换单元现有三代：</p>
+<ol>
+<li>
+<p>Switching Via Memory 基于内存的交换</p>
+<p>数据存入内存再取出，速度取决的内存的读写速度。</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202104/06/204846-296107.png" alt="基于内存的交换"></p>
+</li>
+<li>
+<p>Switching Via a Bus 基于总线的交换</p>
+<p>所有端口共享一条总线，速度取决于总线带宽，数据量大时有可能产生冲突。</p>
+<p>速度可以达到32Gbps，足够企业级路由器使用。</p>
+<p><img src="C:%5CUsers%5C16796%5CDesktop.md%E5%9B%BE%E7%89%87%5C%E5%9F%BA%E4%BA%8E%E6%80%BB%E7%BA%BF%E7%9A%84%E4%BA%A4%E6%8D%A2.PNG" alt="基于总线的交换"></p>
+</li>
+<li>
+<p>Switching Via An Interconnection Network 基于交换连接线的交换</p>
+<p>克服总线带宽限制，可分割数据报为多个固定长度的子段，由交换单元传输。</p>
+<p>速度可达60Gbps，主要用于主干路由器，直接连接光纤网络。</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202104/06/204903-260382.png" alt="基于交互连接线的交换"></p>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Routing processor          控制平面</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202104/06/201236-236794.png" alt="路由器内部结构"></p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://wzytrick.github.io/computernetwork/class2/"><i class="fa fa-chevron-circle-left"></i> Class2</a>
+        </li>
+        
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright © 2019 - WZYtrick |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://wzytrick.github.ioindex.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="https://wzytrick.github.io/js/scripts.js"></script>
+
+
+</body>
+
+</html>
+
