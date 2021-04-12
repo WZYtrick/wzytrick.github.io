@@ -179,6 +179,68 @@ switch rate: 输出/输入"/>
 <li>Routing processor          控制平面</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202104/06/201236-236794.png" alt="路由器内部结构"></p>
+<h3 id="有关端口几种队列">有关端口几种队列</h3>
+<ol>
+<li>
+<p>FIFO(first in first out)</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202104/12/203333-681558.png" alt="FIFO"></p>
+</li>
+<li>
+<p>Priority Queuing</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202104/12/212205-31766.png" alt="priority queuing"></p>
+</li>
+<li>
+<p>Round Robin and Weighted Fair Queuing (WFQ)</p>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202104/12/204242-506227.png" alt="weightfairqueuing"></p>
+</li>
+</ol>
+<h2 id="ipv4">IPv4</h2>
+<p><img src="https://raw.githubusercontent.com/WZYtrick/myImages/main/images202104/12/213300-49422.png" alt="ipv4format"></p>
+<ul>
+<li>
+<p><strong>Version number</strong></p>
+<p>IP协议版本号</p>
+</li>
+<li>
+<p><strong>Header length</strong></p>
+<p>头部的长度，主要确定option的长度</p>
+</li>
+<li>
+<p><strong>Type of service(TOS)</strong></p>
+<p>数据报的协议类型，例如real-time datagrams/non-real-time datagrams(e.g. FTP)</p>
+</li>
+<li>
+<p><strong>Datagram length</strong></p>
+<p>整个报文的长度，包括头部和数据部分</p>
+</li>
+<li>
+<p><strong>Identifier, flags, fragmentation offset</strong></p>
+<p>用于对报文分段的控制，后文会提到</p>
+</li>
+<li>
+<p><strong>Time-to-live</strong></p>
+<p>报文生存时长，一般为路由器跳数</p>
+</li>
+<li>
+<p><strong>Protocol</strong></p>
+<p>传输层使用的协议</p>
+</li>
+<li>
+<p><strong>Header checksum</strong></p>
+<p>首部校验和，确认首部是否有error</p>
+</li>
+<li>
+<p><strong>Source and destination IP addresses</strong></p>
+<p>源地址，目的地址</p>
+</li>
+<li>
+<p><strong>Options</strong></p>
+<p>选项，可以添加在头部的信息</p>
+</li>
+<li>
+<p><strong>Data</strong></p>
+</li>
+</ul>
 
 
 </article>
