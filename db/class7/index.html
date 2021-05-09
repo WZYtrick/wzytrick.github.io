@@ -215,7 +215,9 @@ Transaction 事务 事务是由查询和(或)更新语句的序列组成。
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">grant</span><span style="color:#f92672">/</span><span style="color:#66d9ef">revoke</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">privileges</span> list<span style="color:#f92672">&gt;</span> <span style="color:#75715e">/* 授权 / 收回 */</span>
 <span style="color:#66d9ef">on</span> <span style="color:#f92672">&lt;</span>relationship<span style="color:#f92672">/</span><span style="color:#66d9ef">view</span><span style="color:#f92672">&gt;</span>
 <span style="color:#66d9ef">to</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">user</span> list<span style="color:#f92672">&gt;</span>
-</code></pre></div><p>详见书</p>
+</code></pre></div><p>​	如果user中填__public__则表示对于所有用户公开</p>
+<p>​	值得注意的是，SQL授权机制可以对整个关系或一个关系的指定属性授权但不可以对关系中某个指定元组授权。</p>
+<p>详见书</p>
 
 
 </article>
